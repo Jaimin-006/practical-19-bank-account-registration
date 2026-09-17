@@ -18,7 +18,7 @@ function ControlledAccountForm() {
   }
 
   function handleSubmit(e) {
-    e.preventDefault(); // Prevent full page submit
+    e.preventDefault();
     if (fullName === '' || email === '') {
       alert('Please fill out all fields.');
       return;
@@ -27,36 +27,38 @@ function ControlledAccountForm() {
   }
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow border border-gray-200">
-      <h2 className="text-2xl font-bold text-blue-900 mb-4">Bank Account Registration</h2>
+    <div className="p-6 max-w-md mx-auto bg-white rounded-lg shadow-sm border border-emerald-200">
+      <h2 className="text-2xl font-bold text-emerald-950 mb-4 border-b border-emerald-100 pb-2">
+        Bank Account Registration
+      </h2>
       
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-xs font-bold text-gray-700 mb-1">Full Name:</label>
+          <label className="block text-xs font-semibold text-emerald-900 mb-1">Full Name:</label>
           <input
             type="text"
             value={fullName}
             onChange={handleNameChange}
-            className="w-full p-2 border border-gray-300 rounded text-sm focus:outline-blue-500"
+            className="w-full p-2.5 border border-slate-300 rounded-md text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-600"
             placeholder="e.g. Jaiminpuri Bava"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-gray-700 mb-1">Email Address:</label>
+          <label className="block text-xs font-semibold text-emerald-900 mb-1">Email Address:</label>
           <input
             type="email"
             value={email}
             onChange={handleEmailChange}
-            className="w-full p-2 border border-gray-300 rounded text-sm focus:outline-blue-500"
+            className="w-full p-2.5 border border-slate-300 rounded-md text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-600"
             placeholder="e.g. jaiminpuri@example.com"
           />
         </div>
         <div>
-          <label className="block text-xs font-bold text-gray-700 mb-1">Account Type:</label>
+          <label className="block text-xs font-semibold text-emerald-900 mb-1">Account Type:</label>
           <select
             value={accountType}
             onChange={handleTypeChange}
-            className="w-full p-2 border border-gray-300 rounded text-sm"
+            className="w-full p-2.5 border border-slate-300 rounded-md text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-white"
           >
             <option value="Savings">Savings Account</option>
             <option value="Current">Current Account</option>
@@ -64,7 +66,7 @@ function ControlledAccountForm() {
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-700 text-white py-2 rounded font-bold hover:bg-blue-800"
+          className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-2.5 rounded-md font-semibold text-sm transition"
         >
           Register Account
         </button>
