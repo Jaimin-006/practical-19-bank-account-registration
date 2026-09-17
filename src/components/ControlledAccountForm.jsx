@@ -4,6 +4,7 @@ function ControlledAccountForm() {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [accountType, setAccountType] = useState('Savings');
+  const [initialDeposit, setInitialDeposit] = useState('1000');
 
   function handleNameChange(e) {
     setFullName(e.target.value);
@@ -17,13 +18,21 @@ function ControlledAccountForm() {
     setAccountType(e.target.value);
   }
 
+  function handleDepositChange(e) {
+    setInitialDeposit(e.target.value);
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     if (fullName === '' || email === '') {
       alert('Please fill out all fields.');
       return;
     }
-    alert('Account Created Successfully!\nName: ' + fullName + '\nEmail: ' + email + '\nType: ' + accountType);
+    if (Number(initialDeposit) < 500) {
+      alert('Minimum initial deposit is ₹500.');
+      return;
+    }
+    alert('Account Created Successfully!\nName: ' + fullName + '\nEmail: ' + email + '\nType: ' + accountType + '\nDeposit: ₹' + initialDeposit);
   }
 
   return (
@@ -55,16 +64,28 @@ function ControlledAccountForm() {
             placeholder="e.g. jaiminpuri@example.com"
           />
         </div>
-        <div>
-          <label className="block text-xs font-semibold text-emerald-950 uppercase tracking-wider mb-1">Account Type:</label>
-          <select
-            value={accountType}
-            onChange={handleTypeChange}
-            className="w-full p-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-white"
-          >
-            <option value="Savings">Savings Account</option>
-            <option value="Current">Current Account</option>
-          </select>
+        <div className="grid grid-cols-2 gap-3">
+          <div>
+            <label className="block text-xs font-semibold text-emerald-950 uppercase tracking-wider mb-1">Account Type:</label>
+            <select
+              value={accountType}
+              onChange={handleTypeChange}
+              className="w-full p-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-white"
+            >
+              <option value="Savings">Savings</option>
+              <option value="Current">Current</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-xs font-semibold text-emerald-950 uppercase tracking-wider mb-1">Deposit (₹):</label>
+            <input
+              type="number"
+              value={initialDeposit}
+              onChange={handleDepositChange}
+              className="w-full p-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600"
+              placeholder="Min 500"
+            />
+          </div>
         </div>
         <button
           type="submit"
