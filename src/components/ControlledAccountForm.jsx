@@ -38,7 +38,7 @@ function ControlledAccountForm() {
             value={fullName}
             onChange={handleNameChange}
             className="w-full p-2 border border-gray-300 rounded text-sm focus:outline-blue-500"
-            placeholder="e.g. Amit Patel"
+            placeholder="e.g. Jaiminpuri Bava"
           />
         </div>
         <div>
@@ -48,7 +48,7 @@ function ControlledAccountForm() {
             value={email}
             onChange={handleEmailChange}
             className="w-full p-2 border border-gray-300 rounded text-sm focus:outline-blue-500"
-            placeholder="e.g. amit@example.com"
+            placeholder="e.g. jaiminpuri@example.com"
           />
         </div>
         <div>
