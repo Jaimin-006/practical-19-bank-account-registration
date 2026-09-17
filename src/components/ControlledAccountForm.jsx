@@ -27,38 +27,40 @@ function ControlledAccountForm() {
   }
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-white rounded-lg shadow-sm border border-emerald-200">
-      <h2 className="text-2xl font-bold text-emerald-950 mb-4 border-b border-emerald-100 pb-2">
-        Bank Account Registration
-      </h2>
+    <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md border border-emerald-200/80">
+      <div className="border-b border-emerald-100 pb-3 mb-4">
+        <h2 className="text-2xl font-bold bg-gradient-to-r from-emerald-700 to-teal-700 bg-clip-text text-transparent">
+          Bank Account Registration
+        </h2>
+      </div>
       
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-xs font-semibold text-emerald-900 mb-1">Full Name:</label>
+          <label className="block text-xs font-semibold text-emerald-950 uppercase tracking-wider mb-1">Full Name:</label>
           <input
             type="text"
             value={fullName}
             onChange={handleNameChange}
-            className="w-full p-2.5 border border-slate-300 rounded-md text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+            className="w-full p-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600"
             placeholder="e.g. Jaiminpuri Bava"
           />
         </div>
         <div>
-          <label className="block text-xs font-semibold text-emerald-900 mb-1">Email Address:</label>
+          <label className="block text-xs font-semibold text-emerald-950 uppercase tracking-wider mb-1">Email Address:</label>
           <input
             type="email"
             value={email}
             onChange={handleEmailChange}
-            className="w-full p-2.5 border border-slate-300 rounded-md text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-600"
+            className="w-full p-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600"
             placeholder="e.g. jaiminpuri@example.com"
           />
         </div>
         <div>
-          <label className="block text-xs font-semibold text-emerald-900 mb-1">Account Type:</label>
+          <label className="block text-xs font-semibold text-emerald-950 uppercase tracking-wider mb-1">Account Type:</label>
           <select
             value={accountType}
             onChange={handleTypeChange}
-            className="w-full p-2.5 border border-slate-300 rounded-md text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-white"
+            className="w-full p-2.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-white"
           >
             <option value="Savings">Savings Account</option>
             <option value="Current">Current Account</option>
@@ -66,7 +68,7 @@ function ControlledAccountForm() {
         </div>
         <button
           type="submit"
-          className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-2.5 rounded-md font-semibold text-sm transition"
+          className="w-full bg-emerald-700 hover:bg-emerald-800 text-white py-2.5 rounded-lg font-semibold text-sm shadow transition active:scale-98"
         >
           Register Account
         </button>
