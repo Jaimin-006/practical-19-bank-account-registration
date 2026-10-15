@@ -1,4 +1,4 @@
-# Practical 19: Bank Account Registration & Validation Controlled Form Component
+# Practical 19: CRUD - Delete Operation
 
 ## How to Run
 ```bash
